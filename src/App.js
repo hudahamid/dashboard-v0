@@ -4,7 +4,7 @@ import Navbar from './component/Navbar';
 import Users from './pages/Users';
 import Analytics from './pages/Analytics';
 import Dashboard from './pages/Dashboard';
-import AddUers from './component/AddUers';
+// import AddUers from './pages/AddUers';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
          <Route exact path="/" element={ <Dashboard/>} />
          <Route  path="/users" element={<Users/>} />
          <Route path="/analytics" element={<Analytics/>} />
-         <Route path="/addUsers" element={<AddUers/>} />
+         {/* <Route path="/addUsers" element={<AddUers/>} /> */}
         </Routes>
     </Router>
       </header>
