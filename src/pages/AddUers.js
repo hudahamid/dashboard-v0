@@ -1,8 +1,15 @@
 import React,{useState} from 'react'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import  "./adduser.css"
+import { Button } from 'react-bootstrap';
 import { users } from './users-db'
 
 function AddUers() {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const handleToggle = () => {
+    setIsEnabled(!isEnabled);
+  };
   const [newUserInput, setNewUserInput] = useState({});
   const [usersList, setUsersList] = useState(users);
   const handleOnChange = (event) => {
@@ -10,7 +17,7 @@ function AddUers() {
     const value = event.target.value;
     setNewUserInput((prev) => {
       // Copy the previous object (state) and only change the keyName that I want
-      // prev is aka newMovieInput
+      // prev is aka newMovieInput.
       return { ...prev, [keyName]: value };
     });
   };
@@ -30,9 +37,9 @@ function AddUers() {
     });
   };
   return (
-    <div>
-     <table>
-      <thead>
+    <div class='mx-3 justify-center px-5 pt-4'>
+     <table class="table">
+      <thead className='mx-3 px-3 pt-4'>
         <tr>
           <th >Name</th>
           <th >Role</th>
@@ -40,14 +47,16 @@ function AddUers() {
           <th>Access</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class='mx-3 px-3 pt-4'>
       {usersList.map((user) => ( 
   <tr key={user.id}>
     <td>{user.name}</td>
     <td>{user.role}</td>
     <td>{user.createdAt}</td>
     <td>
-      <button>enable</button>
+    <Button variant={isEnabled ? 'success' : 'danger'} onClick={handleToggle}>
+      {isEnabled ? 'Enabled' : 'Disabled'}
+    </Button>
     </td>
   </tr>))} 
   </tbody>
@@ -95,7 +104,7 @@ function AddUers() {
              value={newUserInput.email}
             onChange={handleOnChange}
           />
-          <button type="submit" text={"Add new users"} />
+          <Button  class="btn btn-primary btn-lg custom-btn"  type="submit" text={"Add new users"} />
         </form>
         
     </div>

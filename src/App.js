@@ -9,7 +9,7 @@ import AddUsers from './pages/AddUers';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header ">
       <Router>
       <Navbar/>
       <Routes>
