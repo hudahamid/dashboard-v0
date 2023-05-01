@@ -1,7 +1,7 @@
 export const users = [
   {
     id: 1,
-    name: "LenaSantos",
+    name: "david",
     password: "TJIK2fMh",
     fullName: "Lena Santos",
     phone: "+1 (856) 555-0158",

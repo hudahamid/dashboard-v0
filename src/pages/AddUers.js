@@ -54,18 +54,15 @@ function AddUers() {
 
   return (
     <div class="mx-3 justify-center px-5 pt-4">
-      <li class="nav-item dropdown pb-3 mb-4">
-        <a
-          class="nav-link dropdown-toggle"
-          
-          href="window.location"
+      <li class="nav-item dropdown-toggle pb-3 mb-4"
+        
           id="navbarDropdown"
           role="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           sort
-        </a>
+        
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li   class="dropdown-item" 
               onClick={() => {
