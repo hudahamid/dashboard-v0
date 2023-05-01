@@ -57,7 +57,7 @@ function AddUers() {
       <li class="nav-item dropdown pb-3 mb-4">
         <a
           class="nav-link dropdown-toggle"
-          href="#"
+          
           id="navbarDropdown"
           role="button"
           data-bs-toggle="dropdown"
@@ -69,7 +69,7 @@ function AddUers() {
           <li>
             <a
               class="dropdown-item"
-              href="#"
+              
               onClick={() => {
                 setSortField("name");
                 setSortDirection(
@@ -86,7 +86,7 @@ function AddUers() {
           <li>
             <a
               class="dropdown-item"
-              href="#"
+              
               onClick={() => {
                 setSortField("role");
                 setSortDirection(
