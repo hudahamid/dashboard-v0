@@ -104,7 +104,7 @@ function AddUers() {
              value={newUserInput.email}
             onChange={handleOnChange}
           />
-          <Button  class="btn btn-primary btn-lg custom-btn"  type="submit" text={"Add new users"} />
+          <Button  class="btn btn-primary btn-lg custom-btn"  type="submit" text={"Add new users"} >Add new users</Button>
         </form>
         
     </div>
