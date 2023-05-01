@@ -6,7 +6,7 @@ export const users = [
       "fullName": "Lena Santos",
       "phone": "+1 (856) 555-0158",
       "email": "lenasantos@example.com",
-      "createdAt": "2022-04-30T13:45:30Z",
+      "createdAt": "2020-04-30T13:45:30Z",
       "role": "user",
       "enabled": true
     },
@@ -17,7 +17,7 @@ export const users = [
       "fullName": "Kian Chan",
       "phone": "+1 (416) 555-0115",
       "email": "kianchan@example.com",
-      "createdAt": "2022-04-30T13:45:30Z",
+      "createdAt": "2023-04-30T13:45:30Z",
       "role": "user",
       "enabled": true
     },
