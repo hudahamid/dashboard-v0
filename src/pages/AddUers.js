@@ -57,8 +57,8 @@ function AddUers() {
       <li class="nav-item dropdown pb-3 mb-4">
         <a
           class="nav-link dropdown-toggle"
-           // eslint-disable-next-line 
-          href="#"
+          
+          href="window.location"
           id="navbarDropdown"
           role="button"
           data-bs-toggle="dropdown"
@@ -67,11 +67,7 @@ function AddUers() {
           sort
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li>
-            <a
-              class="dropdown-item"
-               // eslint-disable-next-line 
-              href="#"
+          <li   class="dropdown-item" 
               onClick={() => {
                 setSortField("name");
                 setSortDirection(
@@ -83,13 +79,12 @@ function AddUers() {
               }}
             >
               name
-            </a>
+            
           </li>
-          <li>
-            <a
+          <li
               class="dropdown-item"
-               // eslint-disable-next-line 
-              href="#"
+                
+              
               onClick={() => {
                 setSortField("role");
                 setSortDirection(
@@ -101,14 +96,14 @@ function AddUers() {
               }}
             >
               role
-            </a>
+            
           </li>
 
-          <li>
-            <a
+          <li
+            
               class="dropdown-item"
-               // eslint-disable-next-line 
-              href="#"
+               
+              
               onClick={() => {
                 setSortField("creationDate");
                 setSortDirection(
@@ -120,7 +115,7 @@ function AddUers() {
               }}
             >
               creation date
-            </a>
+            
           </li>
         </ul>
       </li>
