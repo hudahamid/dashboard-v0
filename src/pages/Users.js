@@ -2,7 +2,8 @@ import React ,{ useState } from 'react';
 import { Link } from 'react-router-dom'
 import { users } from './users-db'
 function Users() {
-  const usersList = useState(users);
+  // eslint-disable-next-line
+  const [usersList, setUsersList] = useState(users);
   return (
      <div>
       <h2>Users info</h2>
@@ -17,18 +18,16 @@ function Users() {
         </tr>
       </thead>
       <tbody>
-        {usersList.map((user) => (
-          <tr key={user.id}>
-            <td>{user.name}</td>
-            <td>{user.role}</td>
-            <td>{user.creationDate}</td>
-            <td>
-              <button >
-               enable
-              </button>
-            </td>
-          </tr>
-        ))}
+      {usersList.map((user) => (
+  <tr key={user.id}>
+    <td>{user.name}</td>
+    <td>{user.role}</td>
+    <td>{user.createdAt}</td>
+    <td>
+      <button>enable</button>
+    </td>
+  </tr>
+  ))}
       </tbody>
     </table>
       </div>
