@@ -57,6 +57,7 @@ function AddUers() {
       <li class="nav-item dropdown pb-3 mb-4">
         <a
           class="nav-link dropdown-toggle"
+           // eslint-disable-next-line 
           href="#"
           id="navbarDropdown"
           role="button"
@@ -69,6 +70,7 @@ function AddUers() {
           <li>
             <a
               class="dropdown-item"
+               // eslint-disable-next-line 
               href="#"
               onClick={() => {
                 setSortField("name");
@@ -86,6 +88,7 @@ function AddUers() {
           <li>
             <a
               class="dropdown-item"
+               // eslint-disable-next-line 
               href="#"
               onClick={() => {
                 setSortField("role");
@@ -104,6 +107,7 @@ function AddUers() {
           <li>
             <a
               class="dropdown-item"
+               // eslint-disable-next-line 
               href="#"
               onClick={() => {
                 setSortField("creationDate");
