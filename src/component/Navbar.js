@@ -6,7 +6,7 @@ function Navbar() {
        <nav>
     <section  >
       <Link to="/" className='ml-20'>Dashboard</Link>
-      <Link to="/users" >Users</Link>
+      <Link to="/addUsers" >Users</Link>
       <Link to="/analytics" >Analytics</Link>
     </section>
   </nav>

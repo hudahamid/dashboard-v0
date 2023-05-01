@@ -1,124 +1,105 @@
-import React, { useState } from "react";
- import * as Yup from 'yup';
-import { Formik, Form,  ErrorMessage } from 'formik';
-import { users } from "./users-db";
+import React,{useState} from 'react'
+
+import { users } from './users-db'
 
 function AddUers() {
-const initialValues = { name: '', username: '', email: '', phone: '', password: '' };
-const phoneRegExp = /^[1-9]{1}[0-9]{9}$/;
-const validationSchema = Yup.object().shape({
-  name: Yup.string().required('Required'),
-  username: Yup.string().required('Required'),
-  email: Yup.string().email('Invalid email').required('Required'),
-  phone: Yup.string()
-    .matches(phoneRegExp, 'Phone number is not valid')
-    .required('Required'),
-  password: Yup.string().required('Required'),
-});
-//___________________________________________________________________________________
-const [newUserInput, setNewUserInput] = useState({});
-const   setUsersList = useState(users);
+  const [newUserInput, setNewUserInput] = useState({});
+  const [usersList, setUsersList] = useState(users);
+  const handleOnChange = (event) => {
+    const keyName = event.target.name;
+    const value = event.target.value;
+    setNewUserInput((prev) => {
+      // Copy the previous object (state) and only change the keyName that I want
+      // prev is aka newMovieInput
+      return { ...prev, [keyName]: value };
+    });
+  };
 
-const handleOnChange = (event) => {
-  const keyName = event.target.name;
-  const value = event.target.value;
-  setNewUserInput((prev) => {
-    // Copy the previous object (state) and only change the keyName that I want
-    // prev is aka newMovieInput
-    return { ...prev, [keyName]: value };
-  });
-};
-
-
-
-
-const handleSubmit = (event) => {
-  event.preventDefault();
-  setUsersList((prev) => {
-    return [newUserInput, ...prev];
-  });
- 
-  
-
-
-
-
-  // Clear the form
-  setNewUserInput({
-    title: "",
-    year: "",
-    director: "",
-    rate: "",
-  });
-};
-
-return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
-      <Form>
-        <div>
-          <label htmlFor="name">Name</label>
-          {/* <Field type="text" name="name"  onChange={handleOnChange} /> */}
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setUsersList((prev) => {
+      return [newUserInput, ...prev];
+    });
+    // Clear the form
+    setNewUserInput({
+      name: "",
+      userName: "",
+      phone: "",
+      email: "",
+      password: "",
+    });
+  };
+  return (
+    <div>
+     <table>
+      <thead>
+        <tr>
+          <th >Name</th>
+          <th >Role</th>
+          <th >Creation Date</th>
+          <th>Access</th>
+        </tr>
+      </thead>
+      <tbody>
+      {usersList.map((user) => ( 
+  <tr key={user.id}>
+    <td>{user.name}</td>
+    <td>{user.role}</td>
+    <td>{user.createdAt}</td>
+    <td>
+      <button>enable</button>
+    </td>
+  </tr>))} 
+  </tbody>
+    </table>
+       <form
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            marginTop: "20px",
+            width: "500px",
+          }}
+          onSubmit={handleSubmit}
+        >
           <input
-             type="text"
-             name="name" 
-             onChange={handleOnChange}
-             
-             value={newUserInput.name}
-           />
-          <ErrorMessage name="name" />
-        </div>
-        <div>
-          <label htmlFor="username">Username</label>
-          {/* <Field type="text" name="username"  onChange={handleOnChange} /> */}
+            type="text"
+            placeholder=" Name"
+            name="name"
+            value={newUserInput.name}
+            onChange={handleOnChange}
+          />
           <input
-             type="text" name="username" 
-             onChange={handleOnChange}
-             
-             value={newUserInput.username}
-           />
-          
-          <ErrorMessage name="username" />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          {/* <Field type="email" name="email"  onChange={handleOnChange}/> */}
+            type="text"
+            placeholder="User Name"
+            name="userName"
+            value={newUserInput.UserName}
+            onChange={handleOnChange}
+          />
           <input
-             type="email" name="email"
-             onChange={handleOnChange}
-            
-             value={newUserInput.email}
-           />
-          <ErrorMessage name="email" />
-        </div>
-        <div>
-          <label htmlFor="phone">Phone</label>
-          {/* <Field type="tel" name="phone"  onChange={handleOnChange} /> */}
+            type="tel"
+            placeholder="phone"
+            name="phone"
+            value={newUserInput.phone}
+            onChange={handleOnChange}
+          />
           <input
-            type="tel" name="phone"
-             onChange={handleOnChange}
-            
-             value={newUserInput.phone}
-           />
-          <ErrorMessage name="phone" />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          {/* <Field type="password" name="password"    onChange={handleOnChange}/> */}
+            type="email"
+            placeholder="Email"
+            name="email"
+            value={newUserInput.email}
+            onChange={handleOnChange}
+          />
           <input
             type="password" name="password" 
-             onChange={handleOnChange}
-            
-             value={newUserInput.password}
-           />
-          <ErrorMessage name="password" />
-        </div>
-        <button type="submit">Submit</button>
-      </Form>
-    </Formik>
-  );
+            placeholder="Password"
+             value={newUserInput.email}
+            onChange={handleOnChange}
+          />
+          <button type="submit" text={"Add new users"} />
+        </form>
+        
+    </div>
+  )
 }
- export default AddUers
+
+export default AddUers
