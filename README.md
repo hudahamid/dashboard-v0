@@ -1,3 +1,14 @@
+Develop a web-based dashboard application that requires a login feature.
+
+1-The dashboard should consist of two tabs: "Analytics" and "Users".
+.......
+2-The "Users" page should present a table with a list of all users, sortable by name, role, and creation date. Each row of the table should include a toggle button to enable/disable the user's access. 
+3-The page should also include a button to add new users. 
+4-The new user form should include fields for username, name, email, phone, and password.
+..........
+5-The "Analytics" page should include a chart displaying the number of enabled and disabled users.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +79,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# dashboard-v0
